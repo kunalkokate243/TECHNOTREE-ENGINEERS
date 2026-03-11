@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="footer-container">
 
         <div className="footer-left">
-          <p>Copyright © Technotree Australia</p>
+          <p>Copyright {new Date().getFullYear()} © Technotree Australia</p>
         </div>
 
         <div className="footer-center">
