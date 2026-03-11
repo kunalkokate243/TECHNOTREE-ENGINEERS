@@ -1,0 +1,150 @@
+/* HERO */
+
+.hero{
+height:420px;
+background:url("/images/cnc-banner.jpg") center/cover no-repeat;
+display:flex;
+align-items:flex-end;
+}
+
+.hero-text{
+padding:60px 120px;
+color:white;
+}
+
+.hero-text h1{
+font-size:50px;
+margin:0;
+}
+
+.hero-text p{
+font-size:18px;
+margin-top:10px;
+}
+
+/* CONTAINER */
+
+.cnc-container{
+max-width:1200px;
+margin:auto;
+padding:80px 20px;
+}
+
+/* MACHINE SECTIONS */
+
+.machine-section{
+display:flex;
+gap:60px;
+align-items:center;
+margin-bottom:90px;
+}
+
+.machine-section.reverse{
+flex-direction:row-reverse;
+}
+
+.machine-img img{
+width:500px;
+border-radius:5px;
+}
+
+.machine-text{
+flex:1;
+}
+
+.machine-text h2{
+font-size:34px;
+margin-bottom:15px;
+}
+
+.machine-text p{
+line-height:1.7;
+color:#444;
+}
+
+/* GALLERY */
+
+.gallery-section{
+margin-top:80px;
+}
+
+.gallery-section h2{
+font-size:34px;
+margin-bottom:30px;
+}
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+}
+
+.gallery-grid img{
+width:100%;
+height:200px;
+object-fit:cover;
+transition:0.3s;
+}
+
+.gallery-grid img:hover{
+transform:scale(1.05);
+}
+
+/* CTA */
+
+.cta-bar{
+background:linear-gradient(90deg,#000,#d62828);
+padding:60px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+color:white;
+}
+
+.cta-bar button{
+background:white;
+border:none;
+padding:12px 25px;
+font-weight:600;
+cursor:pointer;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.machine-section{
+flex-direction:column;
+}
+
+.machine-section.reverse{
+flex-direction:column;
+}
+
+.machine-img img{
+width:100%;
+}
+
+.gallery-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.hero-text{
+padding:30px;
+}
+
+}
+
+@media(max-width:500px){
+
+.gallery-grid{
+grid-template-columns:1fr;
+}
+
+.cta-bar{
+flex-direction:column;
+gap:20px;
+text-align:center;
+}
+
+}
