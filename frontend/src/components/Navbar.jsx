@@ -37,28 +37,6 @@ function Navbar() {
         <NavLink to="/cnc-vmc">CNC / VMC</NavLink>
         <NavLink to="/contact">Contact Us</NavLink>
 
-        {/* Search Icon */}
-        <div
-          className="search-icon"
-          onClick={() => setSearchOpen(!searchOpen)}
-        >
-          <FiSearch />
-        </div>
-
-        {/* Search Input */}
-        {searchOpen && (
-          <input
-            type="text"
-            className="search-input"
-            placeholder="Search..."
-          />
-        )}
-
-        {/* Sign In */}
-        <NavLink to="/login" className="signin-btn">
-          Login
-        </NavLink>
-
       </div>
 
     </div>
