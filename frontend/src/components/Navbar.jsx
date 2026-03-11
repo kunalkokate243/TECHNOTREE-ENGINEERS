@@ -7,6 +7,7 @@ import logo from "../assets/logo.webp";
 function Navbar() {
 
   const [menuOpen, setMenuOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
 
   return (
     <div className="navbar">
@@ -29,34 +30,29 @@ function Navbar() {
       {/* Navigation Links */}
       <div className={menuOpen ? "nav-links active" : "nav-links"}>
 
-        <NavLink to="/home" className={({ isActive }) => isActive ? "active" : ""}>
-          Home
-        </NavLink>
-
-        <NavLink to="/automation" className={({ isActive }) => isActive ? "active" : ""}>
-          Automation
-        </NavLink>
-
-        <NavLink to="/manufacturing" className={({ isActive }) => isActive ? "active" : ""}>
-          Manufacturing
-        </NavLink>
-
-        <NavLink to="/fabrication" className={({ isActive }) => isActive ? "active" : ""}>
-          Fabrication
-        </NavLink>
-
-        <NavLink to="/cnc-vmc" className={({ isActive }) => isActive ? "active" : ""}>
-          CNC / VMC
-        </NavLink>
-
-        <NavLink to="/contact" className={({ isActive }) => isActive ? "active" : ""}>
-          Contact Us
-        </NavLink>
+        <NavLink to="/home">Home</NavLink>
+        <NavLink to="/automation">Automation</NavLink>
+        <NavLink to="/manufacturing">Manufacturing</NavLink>
+        <NavLink to="/fabrication">Fabrication</NavLink>
+        <NavLink to="/cnc-vmc">CNC / VMC</NavLink>
+        <NavLink to="/contact">Contact Us</NavLink>
 
         {/* Search Icon */}
-        <div className="search-icon">
+        <div
+          className="search-icon"
+          onClick={() => setSearchOpen(!searchOpen)}
+        >
           <FiSearch />
         </div>
+
+        {/* Search Input */}
+        {searchOpen && (
+          <input
+            type="text"
+            className="search-input"
+            placeholder="Search..."
+          />
+        )}
 
         {/* Sign In */}
         <NavLink to="/login" className="signin-btn">
