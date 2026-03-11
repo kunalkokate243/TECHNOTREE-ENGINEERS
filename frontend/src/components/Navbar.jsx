@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useState } from "react";
+import { FiSearch } from "react-icons/fi";
 import "../styles/navbar.css";
 import logo from "../assets/logo.webp";
 
@@ -10,28 +11,58 @@ function Navbar() {
   return (
     <div className="navbar">
 
+      {/* Logo */}
       <div className="logo">
-        <Link to="/home">
+        <NavLink to="/home">
           <img src={logo} alt="logo" />
-        </Link>
+        </NavLink>
       </div>
 
       {/* Hamburger */}
-      <div 
+      <div
         className="hamburger"
         onClick={() => setMenuOpen(!menuOpen)}
       >
         ☰
       </div>
 
-      {/* Nav Links */}
+      {/* Navigation Links */}
       <div className={menuOpen ? "nav-links active" : "nav-links"}>
-        <Link to="/home">Home</Link>
-        <Link to="/automation">Automation</Link>
-        <Link to="/manufacturing">Manufacturing</Link>
-        <Link to="/fabrication">Fabrication</Link>
-        <Link to="/cnc-vmc">CNC / VMC</Link>
-        <Link to="/contact">Contact Us</Link>
+
+        <NavLink to="/home" className={({ isActive }) => isActive ? "active" : ""}>
+          Home
+        </NavLink>
+
+        <NavLink to="/automation" className={({ isActive }) => isActive ? "active" : ""}>
+          Automation
+        </NavLink>
+
+        <NavLink to="/manufacturing" className={({ isActive }) => isActive ? "active" : ""}>
+          Manufacturing
+        </NavLink>
+
+        <NavLink to="/fabrication" className={({ isActive }) => isActive ? "active" : ""}>
+          Fabrication
+        </NavLink>
+
+        <NavLink to="/cnc-vmc" className={({ isActive }) => isActive ? "active" : ""}>
+          CNC / VMC
+        </NavLink>
+
+        <NavLink to="/contact" className={({ isActive }) => isActive ? "active" : ""}>
+          Contact Us
+        </NavLink>
+
+        {/* Search Icon */}
+        <div className="search-icon">
+          <FiSearch />
+        </div>
+
+        {/* Sign In */}
+        <NavLink to="/login" className="signin-btn">
+          Login
+        </NavLink>
+
       </div>
 
     </div>
