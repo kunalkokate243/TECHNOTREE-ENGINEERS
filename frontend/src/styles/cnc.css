@@ -64,6 +64,7 @@ img, video {
     background: linear-gradient(90deg, #f5a623, #ff2fb3);
     display: flex;
     align-items: center;
+    padding-left: 5px;
 }
 
 .gradient-section .content {
