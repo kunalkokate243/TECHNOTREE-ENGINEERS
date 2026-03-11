@@ -177,46 +177,7 @@ img, video {
     border-radius: 8px;
 }
 
-/* CONTACT */
 
-.contact-box {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    padding: 60px 120px;
-    flex-wrap: wrap;
-}
-
-.contact-box img {
-    width: 300px;
-    max-width: 100%;
-}
-
-.contact-card {
-    background: #222;
-    color: white;
-    padding: 30px;
-    width: 400px;
-    max-width: 100%;
-}
-
-.contact-card button {
-    margin-top: 10px;
-    padding: 10px 22px;
-    background: linear-gradient(135deg, #2563eb, #1d4ed8);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.contact-card button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
-}
 
 /* MOBILE RESPONSIVE */
 

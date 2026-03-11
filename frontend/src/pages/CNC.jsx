@@ -119,22 +119,7 @@ function CNC() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="contact-box">
-          <img src="/images/cnc/person.png" alt="Contact person" />
-
-          <div className="contact-card">
-            <h3>TALK TO US !</h3>
-            <p>
-              We are always open to talk about your business, new projects, creative opportunities and how we can help each other and grow together.
-              Your Trust and our commitment builds a better world !
-            </p>
-
-            <button onClick={() => window.location.href = "/contact"}>
-              Contact Us
-            </button>
-          </div>
-        </section>
+        
 
       </div>
 
