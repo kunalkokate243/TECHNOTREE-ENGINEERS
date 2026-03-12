@@ -11,9 +11,20 @@ function CNC() {
 
         {/* HERO VIDEO */}
         <section className="hero-video">
-          <div className="video-overlay">
-            <h2>Sign in to Vimeo to watch this video</h2>
-            <button>Sign In</button>
+          <div className="video-container">
+
+
+            <iframe
+              src="https://player.vimeo.com/video/1172770867?autoplay=1&muted=1&loop=1&background=1&autopause=0&controls=0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              loading="lazy"
+              title="VMC Machining"
+            />
+
+            <div className="video-overlay">
+              <h2>VMC Machining</h2>
+            </div>
+
           </div>
         </section>
 
@@ -49,7 +60,14 @@ function CNC() {
             </p>
           </div>
 
-          <div className="gradient-box"></div>
+          <div className="gradient-box">
+            <iframe
+              src="https://player.vimeo.com/video/1172770867?background=1"
+              allow="autoplay; fullscreen; picture-in-picture"
+              title="VMC machining"
+            ></iframe>
+          </div>
+
         </section>
 
         {/* BRASS */}
@@ -94,12 +112,22 @@ function CNC() {
           <img src="/images/cnc/qc.jpeg" alt="Quality Control" />
           <div className="text">
             <h3>Quality Control</h3>
-            <p>
-              We at Technotree believe in achieving excellence through continual improvement in our system, services, products and processes. We are committed to provide high quality products on time and ensure to satisfy needs and expectations of customers.
-              We do 100% inspections and Quality check. Our QC department is qualified and experience in the field. we are equipped with modern quality check instruments and gadgets. We are a ISO 9001:2015 company having quality management system (QMS). We do lean manufacturing and stick to our Quality policy.
 
-              <p><strong>Quality Matters! Our Mission Is To Amaze The Customers...</strong></p>
+            <p>
+              We at Technotree believe in achieving excellence through continual
+              improvement in our system, services, products and processes. We are
+              committed to provide high quality products on time and ensure to satisfy
+              needs and expectations of customers. We do 100% inspections and Quality
+              check. Our QC department is qualified and experienced in the field.
+              We are equipped with modern quality check instruments and gadgets.
+              We are an ISO 9001:2015 company having quality management system (QMS).
+              We do lean manufacturing and stick to our Quality policy.
             </p>
+
+            <p>
+              <strong>Quality Matters! Our Mission Is To Amaze The Customers...</strong>
+            </p>
+
           </div>
         </section>
 
@@ -113,13 +141,13 @@ function CNC() {
 
           <div className="gallery-grid">
             <img src="/images/cnc/p1.jpg" alt="product1" />
-            <img src="/images/cnc/p2.png" alt="product2" />
+            <img src="/images/cnc/p2.jpg" alt="product2" />
             <img src="/images/cnc/p3.jpg" alt="product3" />
             <img src="/images/cnc/p4.jpg" alt="product4" />
           </div>
         </section>
 
-        
+
 
       </div>
 

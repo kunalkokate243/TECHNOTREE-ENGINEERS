@@ -1,51 +1,102 @@
 .cnc-page {
-    font-family: Arial;
+    font-family: Arial, sans-serif;
 }
 
 /* GLOBAL IMAGE SAFETY */
 
-img, video {
+img,
+video {
     max-width: 100%;
     height: auto;
+    display: block;
 }
 
-/* HERO */
+/* HERO VIDEO */
 
 .hero-video {
-    min-height: 320px;
+    position: relative;
+    height: 100vh;
+    min-height: 420px;
     background: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden;
 }
 
-.video-overlay {
-    color: white;
-    text-align: center;
+/* DARK OVERLAY FOR READABILITY */
+
+.hero-video::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 1;
 }
+
+/* VIDEO CONTAINER */
+
+.video-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+/* VIMEO VIDEO */
+
+.video-container iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 177.77vh;   /* keeps 16:9 ratio */
+    height: 100vh;
+    min-width: 100%;
+    min-height: 56.25vw;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+/* HERO TEXT OVERLAY */
+
+.video-overlay {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 2;
+    color: white;
+    padding: 20px;
+}
+
+.video-overlay h2 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.video-overlay p {
+    font-size: 18px;
+}
+
+/* BUTTON */
 
 .video-overlay button {
     margin-top: 20px;
-    padding: 10px 22px;
-    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    padding: 12px 26px;
+    background: linear-gradient(135deg,#2563eb,#1d4ed8);
     color: white;
     border: none;
     border-radius: 8px;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 500;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all .3s ease;
 }
 
 .video-overlay button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 6px 16px rgba(37,99,235,.35);
 }
 
 /* INTRO */
 
 .intro {
-    padding: 40px 120px;
+    padding: 60px 120px;
 }
 
 .intro h2 {
@@ -53,23 +104,24 @@ img, video {
     margin-bottom: 10px;
 }
 
-.intro p{
-    font-size: 20px;
+.intro p {
+    font-size: 18px;
+    line-height: 1.6;
 }
 
 /* GRADIENT SECTIONS */
 
 .gradient-section {
     min-height: 200px;
-    background: linear-gradient(90deg, #f5a623, #ff2fb3);
+    background: linear-gradient(90deg,#f5a623,#ff2fb3);
     display: flex;
     align-items: center;
-    padding-left: 5px;
 }
 
 .gradient-section .content {
     max-width: 1200px;
     margin: auto;
+    padding: 40px 120px;
 }
 
 .gradient-section .text {
@@ -93,11 +145,22 @@ img, video {
     min-width: 280px;
 }
 
+/* GRADIENT VIDEO BOX */
+
 .gradient-box {
     flex: 1;
     min-width: 280px;
-    height: 200px;
-    background: linear-gradient(90deg, #f5a623, #ff2fb3);
+    height: 220px;
+    padding: 4px;
+    border-radius: 12px;
+    background: linear-gradient(90deg,#f5a623,#ff2fb3);
+}
+
+.gradient-box iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
 }
 
 /* MACHINE IMAGE */
@@ -119,7 +182,7 @@ img, video {
     flex: 1;
     min-width: 280px;
     max-width: 500px;
-    border: 8px solid red;
+    border-radius: 10px;
 }
 
 /* QUALITY */
@@ -141,6 +204,7 @@ img, video {
     flex: 1;
     min-width: 280px;
     max-width: 500px;
+    border-radius: 10px;
 }
 
 /* PRODUCT HEADER */
@@ -148,7 +212,7 @@ img, video {
 .product-header {
     background: #222;
     color: white;
-    padding: 12px 120px;
+    padding: 14px 120px;
     font-weight: bold;
 }
 
@@ -164,7 +228,7 @@ img, video {
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2,1fr);
     gap: 16px;
     flex: 1;
     min-width: 280px;
@@ -177,18 +241,24 @@ img, video {
     border-radius: 8px;
 }
 
-
-
 /* MOBILE RESPONSIVE */
 
 @media (max-width: 900px) {
+
+    .hero-video {
+        height: 70vh;
+    }
+
+    .video-overlay h2 {
+        font-size: 32px;
+    }
 
     .intro,
     .machine-row,
     .machine-image,
     .quality,
     .product-gallery,
-    .contact-box {
+    .gradient-section .content {
         padding: 40px 20px;
     }
 
@@ -203,5 +273,4 @@ img, video {
     .gradient-section .text {
         width: 100%;
     }
-
 }
