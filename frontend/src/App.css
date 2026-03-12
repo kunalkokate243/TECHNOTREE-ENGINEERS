@@ -1,4 +1,170 @@
-body{
-    padding: 0;
-    margin: 0;
+/* ===============================
+   GLOBAL RESET (SAFE RESET)
+================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===============================
+   ROOT SETTINGS
+================================ */
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+/* ===============================
+   GLOBAL FONT SETTINGS
+================================ */
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+
+  color: #222;
+  background-color: #ffffff;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  padding-top: 80px;
+}
+
+/* ===============================
+   HEADINGS DEFAULT
+================================ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* ===============================
+   PARAGRAPHS
+================================ */
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ===============================
+   LISTS
+================================ */
+
+ul,
+ol {
+  list-style-position: inside;
+}
+
+/* ===============================
+   LINKS
+================================ */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===============================
+   IMAGES
+================================ */
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===============================
+   BUTTONS
+================================ */
+
+button {
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+/* ===============================
+   INPUTS
+================================ */
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* ===============================
+   CONTAINER UTILITY
+================================ */
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* ===============================
+   FLEX HELPERS
+================================ */
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===============================
+   GRID HELPER
+================================ */
+
+.grid {
+  display: grid;
+}
+
+/* ===============================
+   RESPONSIVE MEDIA
+================================ */
+
+video,
+iframe {
+  max-width: 100%;
+}
+
+/* ===============================
+   SELECTION COLOR
+================================ */
+
+::selection {
+  background: #2563eb;
+  color: white;
+}
+
+/* ===============================
+   PREVENT OVERFLOW BUGS
+================================ */
+
+body,
+#root {
+  overflow-x: hidden;
 }

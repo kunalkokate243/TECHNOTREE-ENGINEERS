@@ -1,21 +1,21 @@
 .footer {
-  background: #1a1a1a;
-  color: #cfcfcf;
-  font-size: 13px;
-  padding: 10px 20px;
+    background: #1a1a1a;
+    color: #cfcfcf;
+    font-size: 13px;
+    padding: 10px 20px;
 }
 
 .footer-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .footer-left,
 .footer-center,
 .footer-right {
-  padding: 5px 10px;
+    padding: 5px 10px;
 }
 
 /* CONTACT */
@@ -37,7 +37,7 @@
     background: #222;
     color: white;
     padding: 30px;
-    width: 400px;
+    width: 500px;
     max-width: 100%;
 }
 
