@@ -55,10 +55,10 @@ function Home() {
         </div>
       </section>
 
+      <div className={styles.container}>
 
       {/* MAIN CONTAINER */}
 
-      <div className={styles.container}>
 
         <h2 className={styles.title}>
           Quality Matters! Our Mission Is To Amaze The Customers...
