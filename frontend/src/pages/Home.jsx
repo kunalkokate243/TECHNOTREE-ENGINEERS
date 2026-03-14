@@ -24,7 +24,7 @@ import p18 from "/images/homeimages/p18.jpg";
 function Home() {
 
   const galleryImages = [
-    p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18
+    p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18
   ];
 
   const [isOpen, setIsOpen] = useState(false);
@@ -49,25 +49,31 @@ function Home() {
       {/* HERO */}
 
       <section className={styles.homeHero}>
-        <div className={styles.homeVideoOverlay}>
-          <h2>Sign in to Vimeo to watch this video</h2>
-          <button>Sign In</button>
+        <div className={styles.homeHeroContent}>
+          {/* <h1>Let's Drive The Future...</h1> */}
+
+          <div className={styles.homeVideoOverlay}>
+            <h2>Sign in to Vimeo to watch this video</h2>
+            <button>Sign In</button>
+          </div>
         </div>
       </section>
 
+
       <div className={styles.container}>
 
-      {/* MAIN CONTAINER */}
-
+        {/* TITLE */}
 
         <h2 className={styles.title}>
           Quality Matters! Our Mission Is To Amaze The Customers...
         </h2>
 
         <p className={styles.subtitle}>
-          Technotree is engaged in the Industrial Automation, Process Control &
-          Integration, Special Purpose Machine (SPM) and Control Panel
-          Manufacturing.
+          Technotree is engaged in the Industrial Automation, Process Control & Integration,
+          Special Purpose Machine (SPM) and Control Panel Manufacturing,
+          Auto Fixturing, Consultation, Maintenance and Service,
+          CNC Turning and VMC Machining, child part and Fasteners Manufacturing.
+          Our Commitment is to Provide Quality Products and Services at Competitive Rates.
         </p>
 
 
@@ -85,9 +91,13 @@ function Home() {
 
             <p>
               Let's Automate & Produce Quality! We are Automation and System
-              integrator buddy.
+              Integrator buddy. Experience in the Designing, Developing and
+              Implementing complex and challenging projects. We are focused
+              on Production Process Automation, System Integration,
+              Robotics, Poka-Yoke, Control Panels, PLC and SCADA.
             </p>
           </div>
+
 
           <div className={styles.card}>
             <h3>Manufacturing</h3>
@@ -98,10 +108,14 @@ function Home() {
             </div>
 
             <p>
-              Special Purpose Machine Designing and Manufacturing tailored to
-              production needs.
+              Special Purpose Machine Designing, Manufacturing and process
+              optimization is our core. We make custom-built machines
+              tailored to your unique production needs which leads to
+              increased productivity, reduced downtime, improved product
+              quality and optimized resource utilization.
             </p>
           </div>
+
 
           <div className={styles.card}>
             <h3>CNC, VMC</h3>
@@ -112,9 +126,13 @@ function Home() {
             </div>
 
             <p>
-              Precision engineered parts using MS, SS, Brass, Copper and Aluminium.
+              As an established CNC and VMC machining company,
+              our extensive experience sets us apart in the industry.
+              We manufacture precision engineered parts using
+              MS, SS, Brass, Copper and Aluminium.
             </p>
           </div>
+
 
           <div className={styles.card}>
             <h3>Fabrication</h3>
@@ -125,7 +143,11 @@ function Home() {
             </div>
 
             <p>
-              Fabrication services including cutting, bending and welding.
+              We shape and assemble metal components from raw
+              materials for industrial use including cutting,
+              bending and welding. We work with steel and
+              aluminium into products like canopies, hoppers,
+              handrails, fixtures and machinery structures.
             </p>
           </div>
 
@@ -143,7 +165,15 @@ function Home() {
 
               <p>
                 <b>TECHNOTREE</b> is a young and dynamic organization engaged in
-                Industrial Automation and Control System Engineering.
+                Industrial Automation, Machine Maintenance, Service Contracts,
+                Control System Engineering Solutions, Automation Consultation
+                and Fabrication.
+              </p>
+
+              <p>
+                We are also in CNC Turning and VMC Machining. We manufacture
+                precision child parts and fasteners using MS, SS, Brass,
+                Copper and Aluminium materials.
               </p>
 
               <b>WE NEVER COMPROMISE WITH QUALITY...</b>
@@ -155,21 +185,84 @@ function Home() {
 
           </div>
 
+
           <div className={`${styles.row} ${styles.reverse}`}>
 
             <div className={styles.text}>
               <h2>Our Mission</h2>
 
               <ul>
-                <li>Advanced control systems</li>
+                <li>Focus on value based Advanced control systems</li>
                 <li>Continual improvement</li>
-                <li>Elimination of waste</li>
+                <li>Total elimination of wastes</li>
+                <li>Promote excellence in industry</li>
               </ul>
-
             </div>
 
             <div className={styles.image}>
               <img src={p2} alt="mission" />
+            </div>
+
+          </div>
+
+
+          <div className={styles.row}>
+
+            <div className={styles.image}>
+              <img src={p3} alt="vision" />
+            </div>
+
+            <div className={styles.text}>
+              <h2>Our Vision</h2>
+
+              <p>BEING EVERYWHERE WHERE QUALITY MATTERS !</p>
+
+              <p>
+                We have zero tolerance when it comes to Quality.
+                We continuously improve our quality standards
+                while expanding our capabilities and capacities.
+              </p>
+
+              <p>
+                Our roadmap starts with our mission and we bring
+                innovation to every project we execute.
+              </p>
+
+              <p>
+                Your Trust and our commitment builds a better world !!
+              </p>
+            </div>
+
+          </div>
+
+
+          <div className={`${styles.row} ${styles.reverse}`}>
+
+            <div className={styles.text}>
+
+              <h2>Quality Policy</h2>
+
+              <p>
+                We at Technotree believe in achieving excellence
+                through continual improvement in our services,
+                products, processes and system.
+              </p>
+
+              <p>
+                We are committed to provide quality products
+                on time and ensure customer satisfaction.
+              </p>
+
+              <p>
+                Technotree is committed to achieve total
+                customer satisfaction through adherence to
+                quality system and continual improvement.
+              </p>
+
+            </div>
+
+            <div className={styles.image}>
+              <img src={p4} alt="quality" />
             </div>
 
           </div>
@@ -183,7 +276,11 @@ function Home() {
 
       <div className={styles.creationsHeader}>
         <h2>Our Creations</h2>
-        <p>We design and manufacture high quality industrial products.</p>
+        <p>
+          We strive to Design, Manufacture, Install and Supply
+          the best products and services through effective
+          implementation and continual improvement.
+        </p>
       </div>
 
 
