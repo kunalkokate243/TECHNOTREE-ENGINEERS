@@ -23,7 +23,6 @@ function CNC() {
 
       {/* INTRO */}
       <section className={styles["intro"]}>
-        <h2>We manufacture precision child parts...</h2>
         <p>
           <span>
             <strong>TECHNOTREE</strong> manufacture precision child parts..

@@ -61,18 +61,15 @@ function Manufacturing() {
         </div>
 
         <div className={styles.videoOverlay}>
-          <h2>Manufacturing</h2>
+          <h2>We're not just building machines, we're building a better future...</h2>
         </div>
       </section>
 
       {/* INTRO */}
       <section className={styles.manufacturingIntro}>
-        <h2>
-          We're not just building machines, we're building a better future...
-        </h2>
 
         <p>
-          <span>Where ideas become manufactured realities... </span>
+          <span><strong>Where ideas become manufactured realities... </strong></span>
           <strong>Technotree</strong> is a Manufacturer and Exporter of Special
           Purpose Machines (SPM), Leak test Machines, Ultrasonic cleaning
           machines, Industrial washing Machines, Fixtures, Auto fixtures,

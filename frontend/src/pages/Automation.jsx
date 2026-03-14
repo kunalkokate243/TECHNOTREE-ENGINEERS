@@ -28,7 +28,7 @@ function Automation() {
           />
         </div>
         <div className={styles.automationOverlay}>
-          <h2>Automation</h2>
+          <h2>Redefining Automation For Smarter Tomorrow...</h2>
         </div>
       </section>
 

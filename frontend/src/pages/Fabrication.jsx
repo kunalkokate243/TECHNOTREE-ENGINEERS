@@ -73,7 +73,7 @@ function Fabrication() {
 
                 </div>
                 <div className={styles.fabricationVideoOverlay}>
-                    <h2>Fabrication</h2>
+                    <h2>Turning Concepts Into Metal Realities...</h2>
                 </div>
 
             </section>
