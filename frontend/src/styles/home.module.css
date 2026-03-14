@@ -8,35 +8,62 @@
 /* HERO */
 
 .homeHero {
-  min-height: 320px;
-  background: #1a1a1a;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
+  width: 100vw;   /* full viewport width */
+  height: 60vh;
+  overflow: hidden;
+  background: #000;
   margin-bottom: 40px;
 }
 
-.homeVideoOverlay {
-  color: white;
-  text-align: center;
+/* VIDEO CONTAINER */
+
+.videoContainer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
-.homeVideoOverlay button {
-  margin-top: 20px;
-  padding: 10px 22px;
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
-  color: white;
+/* VIDEO */
+
+.videoContainer iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 56.25vw; /* 16:9 ratio */
+  min-height: 100%;
+  min-width: 177.77vh;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
   border: none;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all .3s ease;
 }
 
-.homeVideoOverlay button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(37, 99, 235, .3);
+/* DARK OVERLAY ON VIDEO */
+
+.homeHero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1;
+}
+
+/* HERO CONTENT */
+
+.homeVideoOverlay {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  z-index: 2;
+  color: white;
+}
+
+.homeVideoOverlay h2 {
+  font-size: 48px;
+  font-weight: 600;
 }
 
 /* TITLE */
@@ -75,6 +102,13 @@
   color: #2f6f4e;
 }
 
+.card p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* VIDEO BOX */
+
 .videoBox {
   background: #2c2c2c;
   color: white;
@@ -93,15 +127,41 @@
   cursor: pointer;
 }
 
-.card p {
-  font-size: 14px;
-  line-height: 1.6;
+.video-box {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  /* 16:9 */
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 5px;
+}
+
+.video-box iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 /* ABOUT */
 
 .aboutSection {
   padding: 60px 0;
+}
+
+.gradientSection {
+  background: linear-gradient(90deg, #f5a623, #ff2fb3);
+}
+
+.gradientSection .text h2 {
+  color: #222;
+}
+
+.gradientSection .text p,
+.gradientSection .text li {
+  color: #333;
 }
 
 .row {
@@ -182,17 +242,12 @@
 .modal {
   position: fixed;
   z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: rgba(0, 0, 0, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-/* IMAGE */
 
 .modalContent {
   max-width: 85%;
@@ -201,8 +256,6 @@
   box-shadow: 0 10px 40px rgba(0, 0, 0, .6);
 }
 
-/* CLOSE BUTTON */
-
 .close {
   position: absolute;
   top: 30px;
@@ -210,15 +263,7 @@
   font-size: 40px;
   color: white;
   cursor: pointer;
-  transition: .2s;
 }
-
-.close:hover {
-  color: #f7c34c;
-  transform: scale(1.2);
-}
-
-/* ARROWS */
 
 .prev,
 .next {
@@ -229,8 +274,6 @@
   color: white;
   cursor: pointer;
   padding: 12px;
-  user-select: none;
-  transition: .2s;
 }
 
 .prev {
@@ -241,70 +284,10 @@
   right: 30px;
 }
 
-.prev:hover,
-.next:hover {
-  color: #f7c34c;
-  transform: translateY(-50%) scale(1.2);
-}
-
 .homeHeroContent {
   max-width: 1200px;
   width: 100%;
   padding: 40px 20px;
-}
-
-.homeHeroContent h1 {
-  color: white;
-  font-size: 32px;
-  margin-bottom: 20px;
-}
-
-.contactBanner {
-  background: #f4f4f4;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.contactBanner h2 {
-  color: #2f6f4e;
-  margin-bottom: 15px;
-}
-
-.contactBanner p {
-  max-width: 700px;
-  margin: auto;
-  margin-bottom: 10px;
-}
-
-.contactBtn {
-  margin-top: 20px;
-  padding: 12px 30px;
-  background: #c1121f;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 500;
-}
-
-.contactBtn:hover {
-  opacity: .9;
-}
-
-@media(max-width:900px) {
-
-  .homeHeroContent h1 {
-    font-size: 24px;
-  }
-
-}
-
-@media(max-width:600px) {
-
-  .homeHeroContent h1 {
-    font-size: 20px;
-  }
-
 }
 
 /* RESPONSIVE */
@@ -332,30 +315,17 @@
 }
 
 @media(max-width:768px) {
-
   .gallery {
     column-count: 2;
   }
-
 }
 
 @media(max-width:600px) {
-
   .gallery {
     column-count: 1;
   }
 
-  .title {
-    font-size: 20px;
+  .homeHero {
+    height: 70vh;
   }
-
-  .prev,
-  .next {
-    font-size: 35px;
-  }
-
-  .close {
-    font-size: 32px;
-  }
-
 }

@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "../styles/contact.module.css";
 
 function Contact() {
+  const [loading, setLoading] = useState(false);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -13,14 +14,18 @@ function Contact() {
   });
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    setLoading(true);
 
     try {
       const res = await fetch("http://localhost:5000/api/contact", {
@@ -33,29 +38,33 @@ function Contact() {
 
       const data = await res.json();
 
-      alert(data.message);
+      if (res.ok) {
+        alert(data.message || "Form submitted successfully!");
 
-      setFormData({
-        name: "",
-        phone: "",
-        email: "",
-        company: "",
-        subject: "",
-        description: "",
-      });
-
+        setFormData({
+          name: "",
+          phone: "",
+          email: "",
+          company: "",
+          subject: "",
+          description: "",
+        });
+      } else {
+        alert(data.message || "Something went wrong.");
+      }
     } catch (error) {
-      alert("Error submitting form");
+      console.error("Error:", error);
+      alert("Error submitting form. Please try again.");
     }
+
+    setLoading(false);
   };
 
   return (
     <div className={styles["contact-container"]}>
-
       <h1 className={styles["contact-title"]}>Contact Us</h1>
 
       <div className={styles["contact-cards"]}>
-
         <div className={styles.card}>
           <h3>TECHNOTREE AUSTRALIA</h3>
           <p>5 Good Street, Parramatta</p>
@@ -67,16 +76,14 @@ function Contact() {
         <div className={styles.card}>
           <h3>TECHNOTREE ENGINEERS PVT LTD</h3>
           <p>Mohan Nagar, Near Godown Chowk</p>
-          <p>Bhosari industrial Area, Pune</p>
+          <p>Bhosari Industrial Area, Pune</p>
           <p>Maharashtra, INDIA - 411039</p>
           <p>+91 8805 33 8383</p>
           <p>info@electrofirst.com</p>
         </div>
-
       </div>
 
       <form className={styles["contact-form"]} onSubmit={handleSubmit}>
-
         <div className={styles.row}>
           <input
             name="name"
@@ -127,10 +134,10 @@ function Contact() {
           required
         />
 
-        <button type="submit">Submit</button>
-
+        <button type="submit" disabled={loading}>
+          {loading ? "Submitting..." : "Submit"}
+        </button>
       </form>
-
     </div>
   );
 }

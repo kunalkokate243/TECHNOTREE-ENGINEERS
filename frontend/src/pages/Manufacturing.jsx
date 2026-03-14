@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import "../styles/manufacturing.css";
+import styles from "../styles/manufacturing.module.css";
 
 function Manufacturing() {
-
   const [isOpen, setIsOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -33,7 +32,7 @@ function Manufacturing() {
     "/images/Manufacturing_img/24.png",
     "/images/Manufacturing_img/25.png",
     "/images/Manufacturing_img/26.png",
-    "/images/Manufacturing_img/27.png"
+    "/images/Manufacturing_img/27.png",
   ];
 
   const openModal = (index) => {
@@ -43,211 +42,144 @@ function Manufacturing() {
 
   const closeModal = () => setIsOpen(false);
 
-  const nextSlide = () =>
-    setCurrentIndex((prev) => (prev + 1) % images.length);
+  const nextSlide = () => setCurrentIndex((prev) => (prev + 1) % images.length);
 
   const prevSlide = () =>
     setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
 
   return (
-    <div className="manufacturing-page">
-
+    <div className={styles.manufacturingPage}>
       {/* HERO */}
-      <section className="manufacturing-hero">
-        <div className="manufacturing-video-overlay">
-          <h2>Sign in to Vimeo to watch this video</h2>
-          <button>Sign In</button>
+      <section className={styles.manufacturingHero}>
+        <div className={styles.videoContainer}>
+          <iframe
+            src="https://player.vimeo.com/video/1172770867?autoplay=1&muted=1&loop=1&background=1&autopause=0&controls=0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            loading="lazy"
+            title="Hero Video"
+          />
+        </div>
+
+        <div className={styles.videoOverlay}>
+          <h2>Manufacturing</h2>
         </div>
       </section>
 
-
       {/* INTRO */}
-      <section className="manufacturing-intro">
-        <h2>We're not just building machines, we're building a better future...</h2>
+      <section className={styles.manufacturingIntro}>
+        <h2>
+          We're not just building machines, we're building a better future...
+        </h2>
 
         <p>
-          Where ideas become manufactured realities... Technotree Is a Manufacturer
-          and Exporter of Special Purpose Machines (SPM), Leak test Machines,
-          Ultrasonic cleaning machines, Industrial washing Machines, Fixtures,
-          Auto fixtures, Conveyors, Fabrication of Inspection Tables, Trolleys
-          and Storage racks. Our focus is on the development of custom made
-          special products and child parts for our valuable customers.
+          <span>Where ideas become manufactured realities... </span>
+          <strong>Technotree</strong> is a Manufacturer and Exporter of Special
+          Purpose Machines (SPM), Leak test Machines, Ultrasonic cleaning
+          machines, Industrial washing Machines, Fixtures, Auto fixtures,
+          Conveyors, Fabrication of Inspection Tables, Trolleys and Storage
+          racks. Our focus is on the development of custom made Special products
+          and child parts for our valuable customers. WE TRANSFORM YOUR IDEAS
+          INTO REAL WORLD.
         </p>
       </section>
 
+      {/* SECTION TEMPLATE */}
+      {[
+        {
+          title: "Special Purpose Machines (SPM)",
+          img: "/images/Manufacturing_img/spm.webp",
+          reverse: false,
+          text: `We manufacture special purpose machines. We specialize in the design, manufacture, and distribution of conveyor products and equipment, including belt and roller conveyors.
 
+Our team is well experienced in suggesting customized solutions. Our core work areas include production assembly lines, packaging lines, and warehouse management.
 
-      {/* SPM */}
-      <section className="manufacturing-section gradient">
+We manufacture customized special purpose machines and automation solutions for various process industries. Our commitment is to provide highly precise quality services and products at competitive rates, delivered on time (JIT) to delight our valued customers.`,
+        },
+        {
+          title: "Ultrasonic Cleaners",
+          img: "/images/Manufacturing_img/ultrasonic.webp",
+          reverse: true,
+          text: `Ultrasonic cleaners are used to remove oil, residue, and chemical deposits from components during the manufacturing process.
 
-        <div className="manufacturing-grid">
+These machines are designed for industrial production with automatic submerge and lifting mechanisms operated using pneumatic cylinders. Optional features such as auto feeding and air blow drying can be integrated to increase production efficiency.
 
-          <div className="manufacturing-text">
-            <h3>Special Purpose Machines (SPM)</h3>
+A temperature controller regulates the tank temperature, while the liquid level is maintained automatically. The drain valve can also operate automatically after specific cycles to ensure proper deep cleaning.
 
-            <p>
-              Manufacturing Special Purpose Machines (SPM) has become a major
-              focus in today’s industry. Our SPMs are designed to increase
-              productivity, reduce human error and improve efficiency in
-              production processes.
-            </p>
+Depending on the application, we design and manufacture customized ultrasonic cleaning systems for industries such as automobile, food processing, pharmaceutical, chemical, aerospace, and more.`,
+        },
+        {
+          title: "Fixtures / Auto-Fixtures",
+          img: "/images/Manufacturing_img/fixture.webp",
+          reverse: false,
+          text: `We manufacture a wide range of industrial fixtures including leak test fixtures, welding fixtures, laser marking fixtures, and other customized solutions designed for specific production requirements.
 
-            <p>
-              Customized solutions are developed according to client
-              requirements. These machines provide precision and reliability
-              while maintaining high operational efficiency.
-            </p>
+Our specialty is the development of automated fixtures for laser marking machines. These smart fixtures are equipped with sensors that detect part variants and automatically send signals to the laser marking system for the correct marking operation.
+
+This system eliminates the need for manual program selection when multiple similar part variants are used. Using PLC-based control, the fixture automatically selects the correct marking process, preventing human errors and improving productivity.
+
+This solution works as an advanced Poka-Yoke system used in lean manufacturing to ensure error-proof and efficient production.`,
+        },
+        {
+          title: "Precision Child Parts - Sub Assemblies",
+          img: "/images/Manufacturing_img/parts.webp",
+          reverse: true,
+          text: `As an established CNC and VMC machining company, we bring extensive industry experience and a strong commitment to customer satisfaction.
+
+We manufacture precision-engineered child parts and sub-assemblies using materials such as MS, SS, Brass, Copper, and Aluminium, according to specific customer requirements while maintaining superior quality standards.
+
+Our in-house manufacturing setup includes VMC machines, CNC turning centers, Traub machines (special purpose), power presses, and vision inspection systems, along with various advanced machines and quality inspection instruments.
+
+We perform 100% quality inspection to ensure consistent precision and reliability. Quality is our top priority, and we never compromise on delivering the best to our customers.`,
+        },
+        {
+          title: "Fabrication",
+          img: "/images/Manufacturing_img/fabrication.webp",
+          reverse: false,
+          text: `TECHNOTREE provides complete fabrication services including sheet metal work and structural fabrication with in-house MIG welding, TIG welding, and ARC welding facilities, along with engineering design support.
+
+We manufacture custom components and structures using materials such as Stainless Steel, Mild Steel (MS), Aluminium, and Copper, based on specific customer requirements.
+
+Our fabrication capabilities include machine structures, inspection tables, industrial trolleys, metal boxes, containers, conveyor structures, lifters, and other customized industrial equipment.
+
+Our in-house design and development team helps reduce design time and ensures faster project execution. Our licensed, qualified, and experienced staff is committed to delivering reliable and high-quality fabrication solutions.`,
+        },
+      ].map((item, i) => (
+        <section
+          key={i}
+          className={`${styles.manufacturingSection} ${
+            i % 2 === 0 ? styles.gradient : styles.light
+          }`}
+        >
+          <div
+            className={`${styles.manufacturingGrid} ${
+              item.reverse ? styles.reverse : ""
+            }`}
+          >
+            <div className={styles.manufacturingText}>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </div>
+
+            <div className={styles.manufacturingImage}>
+              <img src={item.img} alt={item.title} />
+            </div>
           </div>
-
-          <div className="manufacturing-image">
-            <img src="/images/Manufacturing_img/spm.webp" alt="SPM Machine" />
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      {/* ULTRASONIC */}
-      <section className="manufacturing-section light">
-
-        <div className="manufacturing-grid reverse">
-
-          <div className="manufacturing-text">
-            <h3>Ultrasonic Cleaners</h3>
-
-            <p>
-              Ultrasonic cleaners are widely used across industrial sectors.
-              These machines use ultrasonic waves to remove contaminants from
-              delicate parts.
-            </p>
-
-            <p>
-              The cleaning process is efficient and suitable for industries like
-              Automotive, Food Processing, Chemical and Aerospace.
-            </p>
-          </div>
-
-          <div className="manufacturing-image">
-            <img src="/images/Manufacturing_img/ultrasonic.webp" alt="Ultrasonic" />
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      {/* FIXTURES */}
-      <section className="manufacturing-section gradient">
-
-        <div className="manufacturing-grid">
-
-          <div className="manufacturing-text">
-            <h3>Fixtures / Auto-fixtures</h3>
-
-            <p>
-              Fixtures are manufacturing tools designed to hold and locate work
-              pieces securely during machining or inspection processes.
-            </p>
-
-            <p>
-              We provide high precision fixtures that increase production
-              accuracy and ensure repeatability in manufacturing.
-            </p>
-          </div>
-
-          <div className="manufacturing-image">
-            <img src="/images/Manufacturing_img/fixture.webp" alt="Fixtures" />
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      {/* CHILD PARTS */}
-      <section className="manufacturing-section light">
-
-        <div className="manufacturing-grid reverse">
-
-          <div className="manufacturing-text">
-            <h3>Precision Child Parts - Sub Assemblies</h3>
-
-            <p>
-              As an established CNC and VMC machining company, our extensive
-              experience allows us to manufacture precision components and
-              sub-assemblies.
-            </p>
-
-            <p>
-              Our team produces high-quality machined parts meeting strict
-              industry requirements with precision and consistency.
-            </p>
-          </div>
-
-          <div className="manufacturing-image">
-            <img src="/images/Manufacturing_img/parts.webp" alt="Parts" />
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      {/* FABRICATION */}
-      <section className="manufacturing-section gradient">
-
-        <div className="manufacturing-grid">
-
-          <div className="manufacturing-text">
-            <h3>Fabrication</h3>
-
-            <p>
-              Technotree offers fabrication solutions including structural
-              fabrication, machine bases, inspection tables, trolleys and
-              custom-built assemblies.
-            </p>
-
-            <p>
-              Our fabrication services deliver durable and reliable structures
-              built to meet modern industrial standards.
-            </p>
-          </div>
-
-          <div className="manufacturing-image">
-            <img src="/images/Manufacturing_img/fabrication.webp" alt="Fabrication" />
-          </div>
-
-        </div>
-
-      </section>
-
-
-
+        </section>
+      ))}
 
       {/* CREATIONS */}
-      <section className="manufacturing-creations">
-
-        <div className="creation-header">
-
+      <section className={styles.manufacturingCreations}>
+        <div className={styles.creationHeader}>
           <h1>Our Creations</h1>
 
           <h3>
             We Strive to Design, Manufacture, Install and Supply the BEST
-            Products and Services through effective implementation and
-            continual improvement of the Quality Management System.
+            Products and Services through continual improvement.
           </h3>
-
         </div>
 
-
-
-        <div className="gallery">
-
+        {/* GALLERY */}
+        <div className={styles.gallery}>
           {images.map((img, i) => (
             <img
               key={i}
@@ -256,27 +188,24 @@ function Manufacturing() {
               onClick={() => openModal(i)}
             />
           ))}
-
         </div>
 
-
-
+        {/* MODAL */}
         {isOpen && (
-          <div className="modal" onClick={closeModal}>
-
-            <span className="close" onClick={closeModal}>
+          <div className={styles.modal} onClick={closeModal}>
+            <span className={styles.close} onClick={closeModal}>
               &times;
             </span>
 
             <img
-              className="modal-content"
+              className={styles.modalContent}
               src={images[currentIndex]}
               alt=""
               onClick={(e) => e.stopPropagation()}
             />
 
             <span
-              className="prev"
+              className={styles.prev}
               onClick={(e) => {
                 e.stopPropagation();
                 prevSlide();
@@ -286,7 +215,7 @@ function Manufacturing() {
             </span>
 
             <span
-              className="next"
+              className={styles.next}
               onClick={(e) => {
                 e.stopPropagation();
                 nextSlide();
@@ -294,12 +223,9 @@ function Manufacturing() {
             >
               ❯
             </span>
-
           </div>
         )}
-
       </section>
-
     </div>
   );
 }
