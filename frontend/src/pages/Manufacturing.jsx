@@ -52,8 +52,8 @@ function Manufacturing() {
       {/* HERO */}
       <section className={styles.manufacturingHero}>
         <div className={styles.videoContainer}>
-         <iframe
-            src="https://player.vimeo.com/video/1128708706?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+          <iframe
+            src="https://player.vimeo.com/video/1128708706?autoplay=1&muted=1&loop=1&background=1"
             allow="autoplay; fullscreen; picture-in-picture"
             loading="lazy"
             title="Hero Video"
