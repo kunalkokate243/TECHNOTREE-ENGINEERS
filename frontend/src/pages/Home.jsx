@@ -64,10 +64,11 @@ function Home() {
       <section className={styles.homeHero}>
         <div className={styles.videoContainer}>
           <iframe
-            src="https://player.vimeo.com/video/1172770867?autoplay=1&muted=1&loop=1&background=1&autopause=0&controls=0"
+            src="https://player.vimeo.com/video/1104982444?autoplay=1&muted=1&loop=1&background=1"
             allow="autoplay; fullscreen; picture-in-picture"
             loading="lazy"
             title="Hero Video"
+            frameBorder="0"
           />
         </div>
         <div className={styles.homeVideoOverlay}>
@@ -122,7 +123,7 @@ function Home() {
 
             <div className={styles["video-box"]}>
               <iframe
-                src="https://player.vimeo.com/video/1104982793?background=1&autoplay=1&muted=1&quality=auto&dnt=1"
+                src="https://player.vimeo.com/video/1104984673?background=1&autoplay=1&muted=1&quality=auto&dnt=1"
                 loading="lazy"
                 allow="autoplay; fullscreen; picture-in-picture"
                 referrerpolicy="strict-origin-when-cross-origin"
@@ -169,13 +170,13 @@ function Home() {
 
             <div className={styles["video-box"]}>
               <iframe
-                src="https://player.vimeo.com/video/1104982793?background=1&autoplay=1&muted=1&quality=auto&dnt=1"
+                src="https://player.vimeo.com/video/1126428611?background=1&autoplay=1&muted=1&quality=auto&dnt=1"
                 loading="lazy"
                 allow="autoplay; fullscreen; picture-in-picture"
                 referrerpolicy="strict-origin-when-cross-origin"
                 frameborder="0"
-                title="Video Automation"
-              />
+                title="CNC Turning"
+              ></iframe>
             </div>
 
             <p>
