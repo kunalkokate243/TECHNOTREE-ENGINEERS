@@ -13,7 +13,7 @@ video {
   position: relative;
   width: 100vw;
   /* full viewport width */
-  height: 60vh;
+  height: 75vh;
   overflow: hidden;
   background: #000;
   margin-bottom: 40px;
