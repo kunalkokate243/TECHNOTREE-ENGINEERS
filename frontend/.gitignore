@@ -1,4 +1,38 @@
+# ================================
+
+# Dependencies
+
+# ================================
+
+node_modules
+.pnp
+.pnp.js
+
+# ================================
+
+# Production Build
+
+# ================================
+
+dist
+build
+
+# ================================
+
+# Environment Variables
+
+# ================================
+
+.env
+.env.*
+!.env.example
+
+# ================================
+
 # Logs
+
+# ================================
+
 logs
 *.log
 npm-debug.log*
@@ -7,18 +41,69 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# ================================
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# OS Files
+
+# ================================
+
 .DS_Store
+Thumbs.db
+
+# ================================
+
+# IDE / Editor Files
+
+# ================================
+
+.vscode
+.idea
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# ================================
+
+# Testing
+
+# ================================
+
+coverage
+.nyc_output
+
+# ================================
+
+# Vite Specific
+
+# ================================
+
+.vite
+vite.config.ts.timestamp-*
+
+# ================================
+
+# Temporary Files
+
+# ================================
+
+*.tmp
+*.temp
+
+# ================================
+
+# Optional Cache
+
+# ================================
+
+.cache
+.parcel-cache
+
+# ================================
+
+# TypeScript
+
+# ================================
+
+*.tsbuildinfo
